@@ -1,17 +1,30 @@
+require 'optparse'
 require './models/team.rb'
 require './commands/team_command.rb'
 
-team1 = Team.new 
-team1.name = 'Staines Raiders'
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: app.rb [options]"
 
-team2 = Team.new
-team2.name = 'Windsor Jumpers'
+  opts.on("--team1 name") do |team|
+    options[:team_1] = team
+  end
 
-puts "#{team1.name} vs #{team2.name}"
+  opts.on("--team2 name") do |team|
+    options[:team_2] = team
+  end
+end.parse!
 
-puts "#{team1.name} score #{team1.calculate}%"
-puts "#{team2.name} score #{team2.calculate}%"
+team_1 = Team.new
+team_1.name = options[:team_1]
 
-result = TeamCommand.fight! team1, team2
+team_2 = Team.new
+team_2.name = options[:team_2]
 
-puts "Who won? It's #{result[:winner]} with a score of #{result[:score]}%"
+result = TeamCommand.fight! team_1, team_2
+
+if result.draw?
+  puts "It's a draw! With a score of #{result.winner.score}"
+else
+  puts "Who won? It's #{result.winner.name} with a score of #{result.winner.score}"
+end

@@ -1,5 +1,5 @@
 class Team
-  attr_accessor :name
+  attr_accessor :name, :score
 
   def initialize
     @@matches = ["V", "I", "C", "T", "O", "R", "Y"]
@@ -19,8 +19,7 @@ class Team
     while numbers.length > 1
       val = numbers.shift + numbers.first
       val >= 10 ? result.push(1) : result.push(val % 10)
-      result.flatten!
     end
-    result.length > 2 ? calculate(result) : Integer(result.join)
+    result.length > 2 ? calculate(result) : self.score = Integer(result.join)
   end
 end

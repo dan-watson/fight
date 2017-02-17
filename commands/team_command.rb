@@ -1,13 +1,22 @@
 class TeamCommand
   class << self
+    attr_accessor :winner, :draw
+
     def fight!(a, b)
       score_a = a.calculate
       score_b = b.calculate
-      unless score_a == score_b
-        score_a > score_b ? { winner: a.name, score: score_a } : { winner: b.name, score: score_b }
+      if score_a == score_b
+        self.draw = true
+        self.winner = a
       else
-        { winner: 'a draw', score: score_a } if score_a == score_b
+        self.winner = a if score_a > score_b 
+        self.winner = b if score_b > score_a 
       end
+      self
+    end
+
+    def draw?
+      self.draw
     end
   end
 end

@@ -20,6 +20,14 @@ RSpec.describe Team do
         expect(Fabricate(:surrey_raiders).calculate).to eq(91)
       end
     end
+
+    describe '#score' do
+      it 'returns the stored percentage (represented as an integer) of the teams score' do
+        team = Fabricate(:surrey_raiders)
+        team.calculate
+        expect(team.score).to eq(91)
+      end
+    end
   end
 
   describe '#Green Tippers' do
@@ -38,6 +46,14 @@ RSpec.describe Team do
     describe '#calculate' do
       it 'returns the percentage (represented as an integer) of the teams score' do
         expect(Fabricate(:green_tippers).calculate).to eq(11)
+      end
+    end
+
+    describe '#score' do
+      it 'returns the stored percentage (represented as an integer) of the teams score' do
+        team = Fabricate(:green_tippers)
+        team.calculate
+        expect(team.score).to eq(11)
       end
     end
   end
