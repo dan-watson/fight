@@ -26,5 +26,5 @@ result = TeamCommand.fight! team_1, team_2
 if result.draw?
   puts "It's a draw! With a score of #{result.winner.score}"
 else
-  puts "Who won? It's #{result.winner.name} with a score of #{result.winner.score}"
+  puts "Who won? It's #{result.winner.name} with a score of #{result.winner.score}%"
 end
