@@ -1,0 +1,9 @@
+/.bundle
+*.swp
+*.swo
+*.swn
+*.swm
+*.swl
+*.swk
+*.swj
+.DS_Store
