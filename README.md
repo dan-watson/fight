@@ -11,14 +11,14 @@ Example:
 
 Surrey Raiders
 --------------
-0100041
-110045
-21049
-314(13)1 <- Anything over 9 is scored as 1
-3141
-455
-9(10)1 <- Anything over 9 is scored as 1
-91
+0100041  
+110045  
+21049  
+314(13)1 <- Anything over 9 is scored as 1  
+3141  
+455  
+9(10)1 <- Anything over 9 is scored as 1  
+91  
 
 Usage
 -----
