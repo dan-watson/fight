@@ -18,7 +18,7 @@ class Team
     numbers = numbers.nil? ? to_numbers : numbers
     while numbers.length > 1
       val = numbers.shift + numbers.first
-      val >= 10 ? result.push(1) : result.push(val % 10)
+      val >= 10 ? result.push(1) : result.push(val)
     end
     result.length > 2 ? calculate(result) : self.score = Integer(result.join)
   end
