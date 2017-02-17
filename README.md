@@ -4,7 +4,7 @@ Team 1 vs Team 2 who will win? A quick and rough implementation.
 
 The keyword is VICTORY. Who will have the VICTORY.
 
-Calculation is based upon how many times each letter of VICTORY is contained in a team name. Then each number is added to the previous until
+Calculation is based upon how many times each letter of VICTORY is contained in a team name. Then each number is added to the next until
 there is only a percentage score left. Any number which adds up to more than 9 is scored as 1.
 
 Example:
